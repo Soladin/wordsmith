@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="span6">
+      <h2>Word Sets</h2>
+      <ul>
+        <% @wordsets.each do |wordset| %>
+          <li><%= link_to wordset.name, wordset %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="span6">
+      <h2>Create New Wordset!</h2>
+        <p>Enter a source URL from which to generate your new wordset:</p>
+        <!-- <%= label :url, "A URL" %><br /> -->
+        <%= render "form" %>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
