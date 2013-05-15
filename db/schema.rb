@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501233739) do
+ActiveRecord::Schema.define(:version => 20130515024408) do
 
   create_table "words", :force => true do |t|
     t.string   "term"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130501233739) do
     t.integer  "priority"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "url"
   end
 
 end

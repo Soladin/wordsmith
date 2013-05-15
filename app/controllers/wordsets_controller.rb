@@ -19,6 +19,14 @@ class WordsetsController < ApplicationController
     end
   end
 
+  def show
+    @wordset = Wordset.find(params[:id])
+  end
+
+  def edit
+    @wordset = Wordset.find(params[:id])
+  end
+
   private
   def find_wordset
     @wordset = Wordset.find(params[:id])

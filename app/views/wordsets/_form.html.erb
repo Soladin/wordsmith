@@ -1,13 +1,13 @@
 <%= form_for Wordset.new do |f| %>
 
-
-  <p>
-    <%= text_field :url, "URL" %>
-  </p>
-
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :url, "URL" %>
+    <%= f.text_field :url %>
   </p>
 
   <p>
