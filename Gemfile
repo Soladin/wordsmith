@@ -44,6 +44,7 @@ gem 'nokogiri'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
+  gem 'awesome_print'
 end
 
 group :test do

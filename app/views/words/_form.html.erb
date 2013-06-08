@@ -1,5 +1,5 @@
 <%= form_for [@wordset, @word] do |f| %>
-  <%= f.error_messages %>
+  <%= @word.errors.full_messages %>
   <p>
     <%= f.label :term %><br>
         </programlisting>
