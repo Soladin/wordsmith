@@ -2,11 +2,13 @@ Wordsmith::Application.routes.draw do
 
   root :to => "wordsets#index"
 
-  resources :wordsets do
-    resource :wordsets
-  end
+  # resources :wordsets do
+  #   resource :wordsets
+  # end
 
-  
+  resources :wordsets do
+    resources :words
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

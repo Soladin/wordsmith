@@ -1,6 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
 <h1><%= @wordset.name %></h1>
+</head>
+<body>
+<h3>From:</h3>
+<p><%= @wordset.url %></p><br />
 
+<p> hopefully will get rid of the whole 'Edit' part and will just render the form in here (show) or be able to edit with javascript.</p>
 <%= link_to "Edit Wordset", edit_wordset_path(@wordset) %>
 
-<h3>From:</h3>
-<p><%= @wordset.url %></p>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="span6">
+      <h2>Terms</h2>
+        <p>Monkey</p>
+      <!-- <li> -->
+        <%# @words.each do |word| %>
+          <!-- <li><%#= word.term %></li> -->
+        <%# end %>
+      <!-- </li> -->
+    </div>
+    <div class="span6">
+      <h2>Definitions</h2>
+        <p>Banana</p>
+      <!-- <li> -->
+        <!-- <p>@words.each do |def| </p> -->
+        <%#= render "form" %>
+    </div>
+  </div>
+</div>
+<%= link_to "Add New Word", new_wordset_word_path(@wordset) %>
+</body>
+</html>
