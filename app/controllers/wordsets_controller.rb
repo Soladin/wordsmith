@@ -25,6 +25,7 @@ class WordsetsController < ApplicationController
 
   def show
     @wordset = Wordset.find(params[:id])
+    @words = @wordset.words
   end
 
   def edit

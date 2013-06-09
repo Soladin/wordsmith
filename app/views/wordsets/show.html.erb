@@ -15,11 +15,11 @@
     <div class="span6">
       <h2>Terms</h2>
         <p>Monkey</p>
-      <!-- <li> -->
-        <%# @words.each do |word| %>
-          <!-- <li><%#= word.term %></li> -->
-        <%# end %>
-      <!-- </li> -->
+      <li>
+        <% @words.each do |word| %>
+          <li><%= word.term %></li>
+        <% end %>
+      </li>
     </div>
     <div class="span6">
       <h2>Definitions</h2>
