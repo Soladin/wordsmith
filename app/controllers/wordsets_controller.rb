@@ -32,6 +32,13 @@ class WordsetsController < ApplicationController
     @wordset = Wordset.find(params[:id])
   end
 
+  def update
+    @wordset = Wordset.find(params[:id])
+    @wordset.update_attributes(params[:wordset])
+    flash[:notice] = "Wordset has been updated."
+    redirect_to @wordset
+  end
+
   private
   def find_wordset
     @wordset = Wordset.find(params[:id])

@@ -1,4 +1,5 @@
 <%= form_for(@wordset) do |f| %>
+  <!-- add in errors dealy. railscast 1:36 -->
 
   <div class="field">
   <p>
@@ -19,8 +20,8 @@
 
   <%= f.fields_for :words do |builder| %>
     <fieldset>
-      <%= builder.label :content, "Term" %><br />
-      <%= builder.text_area :content %><br />
+      <%= builder.label :term, "Term" %><br />
+      <%= builder.text_area :term %><br />
       <%= builder.check_box :_destroy %>
       <%= builder.label :_destroy, "Remove Word" %>
       <!-- Obviously gonna need a "Definition" field in here too -->
