@@ -4,11 +4,11 @@
 <h1><%= @wordset.name %></h1>
 </head>
 <body>
-<h3>From:</h3>
-<p><%= @wordset.url %></p><br />
+<h5>From: <%= @wordset.url %></h5>
 
-<p> hopefully will get rid of the whole 'Edit' part and will just render the form in here (show) or be able to edit with javascript.</p>
-<%= link_to "Edit Wordset", edit_wordset_path(@wordset) %>
+
+<!-- <p> hopefully will get rid of the whole 'Edit' part and will just render the form in here (show) or be able to edit with javascript.</p> -->
+<%= link_to "Edit", edit_wordset_path(@wordset) %>
 
   <div class="container-fluid">
   <div class="row">
@@ -24,9 +24,11 @@
     <div class="span6">
       <h2>Definitions</h2>
         <p>Banana</p>
-      <!-- <li> -->
-        <!-- <p>@words.each do |def| </p> -->
-        <%#= render "form" %>
+      <li>
+        <% @words.each do |word| %>
+          <li><%= word.definition %></li>
+        <% end %>
+      </li>
     </div>
   </div>
 </div>

@@ -20,8 +20,10 @@
 
   <%= f.fields_for :words do |builder| %>
     <fieldset>
-      <%= builder.label :term, "Term" %><br />
-      <%= builder.text_area :term %><br />
+      <%= builder.label :term, "Term" %>
+      <%= builder.text_field :term %><br />
+      <%= builder.label :definition, "Definition" %>
+      <%= builder.text_field :definition %><br />
       <%= builder.check_box :_destroy %>
       <%= builder.label :_destroy, "Remove Word" %>
       <!-- Obviously gonna need a "Definition" field in here too -->
