@@ -3,12 +3,14 @@ require 'open-uri'
 class Wordset < ActiveRecord::Base
   before_save :scrape_url
   attr_accessible :description, :name, :priority, :url, :words_attributes #, :word
+
+  validates :name, :presence => true
   
   has_many :words, autosave: true, dependent: :destroy
 
   accepts_nested_attributes_for :words, allow_destroy: true
 
-  after_save :scrape_url #or after_create
+  # after_save :scrape_url  # or after_create?
 
   # maybe require Noko      active model callbacks, initialized, dirty 
   #delayed_job    background task stuff
@@ -22,6 +24,7 @@ class Wordset < ActiveRecord::Base
     end
 
     doc.css("strong").each do |stronged|
+      add_word_if_new(stronged.text)
     end
 
   end

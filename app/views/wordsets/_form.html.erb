@@ -1,4 +1,8 @@
 <%= form_for(@wordset) do |f| %>
+  <%= f.error_messages :header_message => "Name field is required!",
+    :message => "You need to fill in 'Name'",
+    :header_tag => :h3 %>
+  
   <!-- add in errors dealy. railscast 1:36 -->
 
   <div class="field">
@@ -26,7 +30,6 @@
       <%= builder.text_field :definition %><br />
       <%= builder.check_box :_destroy %>
       <%= builder.label :_destroy, "Remove Word" %>
-      <!-- Obviously gonna need a "Definition" field in here too -->
     </fieldset>
   <% end %>
 

@@ -19,7 +19,8 @@ class WordsetsController < ApplicationController
       redirect_to @wordset
     else
       flash[:alert] = "Wordset wasn't got saved!"
-      render :action => "new"
+      redirect_to wordsets_path
+      # render :action => "new"
     end
   end
 
