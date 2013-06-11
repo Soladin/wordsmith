@@ -40,6 +40,13 @@ class WordsetsController < ApplicationController
     redirect_to @wordset
   end
 
+  def destroy
+    @wordset = Wordset.find(params[:id])
+    @wordset.destroy
+    flash[:notice] = "Project got deleted, man."
+    redirect_to wordsets_path
+  end
+
   private
   def find_wordset
     @wordset = Wordset.find(params[:id])
