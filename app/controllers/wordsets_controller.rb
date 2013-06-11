@@ -18,7 +18,7 @@ class WordsetsController < ApplicationController
       flash[:notice] = "Wordset got saved!"
       redirect_to @wordset
     else
-      flash[:alert] = "Wordset wasn't got saved!"
+      flash[:alert] = "Wordset wasn't got saved! Make sure all fields are filled out."
       redirect_to wordsets_path
       # render :action => "new"
     end
