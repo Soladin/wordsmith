@@ -28,12 +28,4 @@ class WordsController < ApplicationController
   def find_word
     @word = @wordset.words.find(params[:id])
   end
-
-
 end
-
-
-
-# ok i need to get some words in the database so i can see if what i'm doing with nested stuff is working.
-# generate scaffold (find out what exactly scaffold does, I think makes MVC?) resource with name:string
-# then rake db:migrate

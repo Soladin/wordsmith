@@ -1,15 +1,9 @@
 class WordsetsController < ApplicationController
-  # @word = @wordset.words.build
 
   def index
     @wordsets = Wordset.all
     @wordset = Wordset.new
   end
-
-  # DON'T NEED NEW ACTION because ... and this was also messing up the edit action
-  # def new
-  #   @wordset = Wordset.new
-  # end
 
   def create
     puts params[:wordset]
@@ -20,7 +14,6 @@ class WordsetsController < ApplicationController
     else
       flash[:alert] = "Wordset wasn't got saved! Make sure all fields are filled out."
       redirect_to wordsets_path
-      # render :action => "new"
     end
   end
 
@@ -50,9 +43,5 @@ class WordsetsController < ApplicationController
   private
   def find_wordset
     @wordset = Wordset.find(params[:id])
-    # rescue ActiveRecord::RecordNotFound
-    #   flash[:alert] = "The wordset you were looking for could not be found."
-    #   redirect_to wordsets_path
-    # end
   end
 end

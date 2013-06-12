@@ -4,12 +4,10 @@
 <h1><%= @wordset.name %></h1>
 </head>
 <body>
-<h5>From: <%= @wordset.url %></h5>
+<b>From <%= @wordset.url %></b>
 
-
-<!-- <p> hopefully will get rid of the whole 'Edit' part and will just render the form in here (show) or be able to edit with javascript.</p> -->
-<%= link_to "Edit", edit_wordset_path(@wordset) %>
-<%= link_to "Delete", wordset_path(@wordset), method: :delete, confirm: "Are you sure you want to delete this WordSet?" %>
+<p><%= link_to "Edit", edit_wordset_path(@wordset) %> this WordSet or its terms and definitions.</p>
+<p><%= link_to "Delete", wordset_path(@wordset), method: :delete, confirm: "Are you sure you want to delete this WordSet?" %> this WordSet.</p>
 
   <div class="container-fluid">
   <div class="row">
